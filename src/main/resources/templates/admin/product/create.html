@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un produit</title>
+</head>
+<body>
+    <h1>Ajouter un produit</h1>
+    <form th:object="${product}" th:action="@{/admin/product/add}" method="post">
+        <label for="designation">Designation :
+            <input type="text" id="designation" th:field="${product.designation}" required>
+        </label>
+        <label for="qte">Qte :
+            <input type="text" id="qte" th:field="${product.qte}" required>
+        </label>
+        <label for="prix">Prix :
+            <input type="text" id="prix" th:field="${product.prix}" required>
+        </label>
+        <label for="description">Description :
+            <textarea id="description" th:field="${product.description}"></textarea>
+        </label>
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>
