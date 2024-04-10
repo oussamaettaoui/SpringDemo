@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Component
 public class UserMapper {
-    public static UserDTO toDTO(Optional<Utilisateur> utilisateur){
+    public static UserDTO toDTO(Utilisateur utilisateur){
         UserDTO userDTO = new UserDTO();
         userDTO.setId(utilisateur.getId());
         userDTO.setPrenom(utilisateur.getPrenom());

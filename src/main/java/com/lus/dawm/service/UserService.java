@@ -24,7 +24,7 @@ public class UserService {
         if(utilisateur != null){
             utilisateur.setNom(updateUser.getNom());
             utilisateur.setPrenom(updateUser.getPrenom());
-            utilisateur.setEmail(updateUser.getEmail());
+            utilisateur.setUsername(updateUser.getUsername());
             return userRepository.save(utilisateur);
         }
         return null;
@@ -36,5 +36,8 @@ public class UserService {
         if(userRepository.existsById(id)){
             userRepository.deleteById(id);
         }
+    }
+    public Utilisateur findByUsername(String username){
+        return userRepository.findByUsername(username);
     }
 }

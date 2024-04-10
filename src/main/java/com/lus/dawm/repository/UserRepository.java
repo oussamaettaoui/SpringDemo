@@ -10,5 +10,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<Utilisateur,Long> {
     List<Utilisateur> findByNomOrPrenom(String nom,String prenom);
     List<Utilisateur> findByNomOrderByPrenomAsc(String nom);
+    Utilisateur findByUsername(String username);
 
 }

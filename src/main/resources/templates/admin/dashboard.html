@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
 </head>
 <body>
-
+    <h1>Bienvenue, <span th:text="${user.nom}"></span> sur notre boutique électronique</h1>
+    <div sec:authorize="hasRole('USER')">Text visible to User.</div>
+    <div sec:authorize="hasRole('ADMIN')">Text visible to Admin.</div>
+    <div sec:authorize="hasRole('CLIENT')">Text visible to Client.</div>
 </body>
 </html>
